@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rupesh Pithva — Technical Architect &amp; Delivery Lead</title>
-<meta name="description" content="Rupesh Pithva — Technical Architect and Delivery Lead specializing in Web3, blockchain consensus platforms, and cross-border infrastructure delivery.">
+<meta name="description" content="Rupesh Pithva — Technical Architect and Delivery Lead spanning enterprise integration architecture and Web3 / blockchain consensus platforms.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -19,6 +19,7 @@
     --parchment-2:#E6DECB;
     --brass:#C08A4E;
     --brass-light:#E0B37E;
+    --slate-accent:#7C97B3;
     --text-dark:#1B1F27;
     --text-muted-dark:#94A3B8;
     --text-muted-light:#6B6252;
@@ -44,7 +45,6 @@
   }
   ::selection{background:var(--brass);color:var(--ink);}
 
-  /* Focus visibility */
   a:focus-visible, button:focus-visible{
     outline:2px solid var(--brass-light);
     outline-offset:3px;
@@ -75,9 +75,9 @@
     text-decoration:none;
   }
   .nav-mark span{color:var(--brass-light);}
-  nav.nav-links{display:flex; gap:28px;}
+  nav.nav-links{display:flex; gap:24px;}
   nav.nav-links a{
-    font-size:0.92rem;
+    font-size:0.9rem;
     text-decoration:none;
     color:var(--text-muted-dark);
     transition:color .15s ease;
@@ -85,7 +85,7 @@
   nav.nav-links a:hover{color:var(--parchment);}
   .nav-toggle{display:none;}
 
-  @media (max-width:640px){
+  @media (max-width:760px){
     nav.nav-links{
       position:absolute;
       top:100%; left:0; right:0;
@@ -120,7 +120,7 @@
     inset:0;
     width:100%;
     height:100%;
-    opacity:0.55;
+    opacity:0.5;
   }
   .hero-inner{position:relative; z-index:2;}
   .hero-eyebrow{
@@ -132,10 +132,10 @@
   h1.hero-title{
     font-family:var(--serif);
     font-weight:500;
-    font-size:clamp(2.2rem, 5.4vw, 4rem);
-    line-height:1.08;
+    font-size:clamp(2.1rem, 5vw, 3.6rem);
+    line-height:1.1;
     margin:0 0 28px;
-    max-width:14ch;
+    max-width:17ch;
     color:#F7F4EC;
   }
   .hero-title em{
@@ -144,17 +144,17 @@
     color:var(--brass-light);
   }
   .hero-sub{
-    font-size:1.1rem;
-    max-width:52ch;
+    font-size:1.08rem;
+    max-width:56ch;
     color:#C9D2DE;
     margin:0 0 36px;
   }
   .hero-meta{
     display:flex;
     flex-wrap:wrap;
-    gap:10px 28px;
+    gap:10px 24px;
     font-family:var(--mono);
-    font-size:0.85rem;
+    font-size:0.82rem;
     color:var(--text-muted-dark);
     margin-bottom:40px;
   }
@@ -178,6 +178,47 @@
     color:var(--parchment);
   }
   .btn-ghost:hover{border-color:var(--brass-light); color:var(--brass-light);}
+
+  /* ---------- PILLARS ---------- */
+  .pillars{
+    padding:88px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .pillars .section-head{margin-bottom:44px;}
+  .pillar-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line-soft);
+    border:1px solid var(--line-soft);
+  }
+  .pillar{
+    background:var(--ink);
+    padding:36px;
+  }
+  .pillar .tag{
+    font-family:var(--mono);
+    font-size:0.75rem;
+    color:var(--brass-light);
+    margin:0 0 12px;
+  }
+  .pillar h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.4rem;
+    margin:0 0 18px;
+    color:#F7F4EC;
+  }
+  .pillar ul{
+    margin:0;
+    padding-left:18px;
+    color:#C9D2DE;
+    font-size:0.94rem;
+  }
+  .pillar li{margin-bottom:9px;}
+  @media (max-width:760px){
+    .pillar-grid{grid-template-columns:1fr;}
+  }
 
   /* ---------- CAREER STRIP ---------- */
   .career{
@@ -245,7 +286,7 @@
   .section-head h2{
     font-family:var(--serif);
     font-weight:500;
-    font-size:clamp(1.7rem,3.2vw,2.4rem);
+    font-size:clamp(1.6rem,3vw,2.2rem);
     margin:0;
     color:#F7F4EC;
   }
@@ -259,6 +300,9 @@
   /* ---------- LEDGER (experience blocks) ---------- */
   .ledger{
     border-bottom:1px solid var(--line-soft);
+  }
+  .ledger.enterprise{
+    background:var(--ink-2);
   }
   .chain{
     position:relative;
@@ -296,6 +340,7 @@
     background:var(--ink);
     border:2px solid var(--brass-light);
   }
+  .ledger.enterprise .block::after{background:var(--ink-2);}
   .block-head{
     display:flex;
     flex-wrap:wrap;
@@ -350,7 +395,7 @@
   .achievements .section-head p{color:var(--text-muted-light);}
   .stat-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(auto-fit, minmax(190px, 1fr));
     gap:1px;
     background:var(--parchment-2);
     border:1px solid var(--parchment-2);
@@ -361,22 +406,16 @@
   }
   .stat .num{
     font-family:var(--serif);
-    font-size:2.6rem;
+    font-size:2.3rem;
     font-weight:500;
     color:var(--brass);
     line-height:1;
     margin-bottom:12px;
   }
   .stat .label{
-    font-size:0.88rem;
+    font-size:0.86rem;
     color:var(--text-muted-light);
-    max-width:22ch;
-  }
-  @media (max-width:800px){
-    .stat-grid{grid-template-columns:1fr 1fr;}
-  }
-  @media (max-width:480px){
-    .stat-grid{grid-template-columns:1fr;}
+    max-width:24ch;
   }
 
   /* ---------- SKILLS ---------- */
@@ -510,7 +549,8 @@
     <a href="#top" class="nav-mark">Rupesh Pithva <span>·</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
     <nav class="nav-links" id="navLinks">
-      <a href="#work">Work</a>
+      <a href="#enterprise">Enterprise</a>
+      <a href="#web3">Web3</a>
       <a href="#achievements">Achievements</a>
       <a href="#skills">Skills</a>
       <a href="#credentials">Credentials</a>
@@ -524,17 +564,51 @@
   <section class="hero">
     <canvas id="nodeCanvas"></canvas>
     <div class="wrap hero-inner">
-      <p class="hero-eyebrow">Technical Architect &amp; Delivery Lead — Web3 / Cloud / DevOps</p>
-      <h1 class="hero-title">Architecting the rails <em>cross‑border value</em> moves on.</h1>
-      <p class="hero-sub">21 years leading delivery and architecture across banking, telecom, and supply chain — the last six spent building consensus platforms for central banks, spam-detection networks, and identity systems on Hedera, Corda, Quorum, and Ethereum.</p>
+      <p class="hero-eyebrow">Technical Architect &amp; Delivery Lead — Enterprise Integration to Web3</p>
+      <h1 class="hero-title">Two decades of solution architecture, <em>extended onto blockchain rails.</em></h1>
+      <p class="hero-sub">21 years leading delivery and architecture across BFSI, supply chain, and telecom — high-availability EAI platforms, regulatory systems, and global offshore delivery models — with the last six years spent applying that same discipline to consensus infrastructure for central banks and telecoms on Hedera, Corda, Quorum, and Ethereum.</p>
       <div class="hero-meta">
         <span>21 yrs in delivery</span>
+        <span>BFSI · Supply Chain · Telecom</span>
         <span>6+ yrs in Web3</span>
         <span>Pune, India</span>
       </div>
       <div class="hero-actions">
-        <a href="#work" class="btn btn-primary">View the project ledger</a>
+        <a href="#enterprise" class="btn btn-primary">See the work</a>
         <a href="mailto:rupesh.pithva@gmail.com" class="btn btn-ghost">Email me</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Two disciplines, one delivery track record</h2>
+        <p>Enterprise architecture built the foundation. Web3 is where it went next.</p>
+      </div>
+      <div class="pillar-grid">
+        <div class="pillar">
+          <p class="tag">Discipline 01 — since 2005</p>
+          <h3>Enterprise solution architecture</h3>
+          <ul>
+            <li>Scalable, high-availability EAI and SOA platforms across BFSI, supply chain, and telecom</li>
+            <li>Regulatory program architecture and delivery (Credit Suisse MYRIAD DQM)</li>
+            <li>Global offshore delivery models and cross-team release management</li>
+            <li>IT strategy, governance, quality control, and Agile methodologies</li>
+            <li>Oracle SOA Suite, BPEL, CEP, WebLogic, J2EE integration stacks</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <p class="tag">Discipline 02 — since 2020</p>
+          <h3>Web3 &amp; blockchain architecture</h3>
+          <ul>
+            <li>Consensus infrastructure on Hedera, Corda, Quorum, and Ethereum</li>
+            <li>Cross-border CBDC platforms connecting central banks</li>
+            <li>Digital identity and self-sovereign identity systems</li>
+            <li>Blockchain/AI-ML platforms and tokenomics fundamentals</li>
+            <li>R3 Corda Certified Developer, DAML Associate</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -570,17 +644,60 @@
     </div>
   </section>
 
-  <section class="ledger" id="work">
+  <section class="ledger enterprise" id="enterprise">
     <div class="wrap">
       <div class="section-head">
-        <h2>Selected project ledger</h2>
-        <p>Nine engagements, ordered like block height — newest at the top, each one settled before the next began.</p>
+        <h2>Enterprise integration ledger</h2>
+        <p>Fifteen years of regulatory and integration architecture before blockchain entered the picture.</p>
       </div>
 
       <div class="chain">
 
         <div class="block">
-          <span class="block-id">Blk 09</span>
+          <span class="block-id">Blk 02</span>
+          <div class="block-head">
+            <h3>MYRIAD DQM Platform — Credit Suisse</h3>
+            <span class="dates">Jul 2015 – Dec 2019</span>
+          </div>
+          <p class="block-role">Technical Lead</p>
+          <ul>
+            <li>Partnered with Business and IT teams to translate regulatory requirements and support FSD preparation.</li>
+            <li>Designed and architected regulatory program solutions using UML, overseeing development through to production release.</li>
+            <li>Resolved technical issues across SIT/UAT/OAT, mentored new team members, and led code reviews, integration, and component testing.</li>
+          </ul>
+          <div class="tech-tags"><span>Java</span><span>Spring</span><span>Oracle CEP</span><span>PL/SQL</span><span>Unix</span></div>
+        </div>
+
+        <div class="block">
+          <span class="block-id">Blk 01</span>
+          <div class="block-head">
+            <h3>ESR Automation — NeuStar</h3>
+            <span class="dates">Jul 2013 – Jul 2015</span>
+          </div>
+          <p class="block-role">Technical Lead</p>
+          <ul>
+            <li>Built a number-porting platform supporting wireless-to-wireless number porting.</li>
+            <li>Defined orchestration workflows using Oracle FMW (BPEL) for core number-porting business processes.</li>
+            <li>Owned release management and client communication for the engagement.</li>
+          </ul>
+          <div class="tech-tags"><span>Oracle SOA Suite 11g</span><span>WebLogic</span><span>J2EE</span><span>BPEL</span><span>XML/XSLT</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ledger" id="web3">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Web3 &amp; blockchain ledger</h2>
+        <p>Seven engagements, ordered like block height — newest at the top.</p>
+      </div>
+
+      <div class="chain">
+
+        <div class="block">
+          <span class="block-id">Blk 07</span>
           <div class="block-head">
             <h3>Track and Trace — Teleport, Malaysia</h3>
             <span class="dates">May 2026 – Present</span>
@@ -595,7 +712,7 @@
         </div>
 
         <div class="block">
-          <span class="block-id">Blk 08</span>
+          <span class="block-id">Blk 06</span>
           <div class="block-head">
             <h3>Membership Portal — Hedera Ecosystem</h3>
             <span class="dates">Jan 2026 – May 2026</span>
@@ -610,7 +727,7 @@
         </div>
 
         <div class="block">
-          <span class="block-id">Blk 07</span>
+          <span class="block-id">Blk 05</span>
           <div class="block-head">
             <h3>CBDC Cross-Border Platform — Central Bank, Middle East</h3>
             <span class="dates">Jan 2025 – Dec 2025</span>
@@ -625,7 +742,7 @@
         </div>
 
         <div class="block">
-          <span class="block-id">Blk 06</span>
+          <span class="block-id">Blk 04</span>
           <div class="block-head">
             <h3>Quality of Trust — TM Forum</h3>
             <span class="dates">Aug 2024 – Jan 2025</span>
@@ -639,7 +756,7 @@
         </div>
 
         <div class="block">
-          <span class="block-id">Blk 05</span>
+          <span class="block-id">Blk 03</span>
           <div class="block-head">
             <h3>Sustainable Blockchain Supply Chain — US Tech Giant</h3>
             <span class="dates">Apr 2022 – Jun 2024</span>
@@ -654,7 +771,7 @@
         </div>
 
         <div class="block">
-          <span class="block-id">Blk 04</span>
+          <span class="block-id">Blk 02</span>
           <div class="block-head">
             <h3>Self-Sovereign Identity Platform — Bank, South Africa</h3>
             <span class="dates">Oct 2021 – Mar 2022</span>
@@ -668,7 +785,7 @@
         </div>
 
         <div class="block">
-          <span class="block-id">Blk 03</span>
+          <span class="block-id">Blk 01</span>
           <div class="block-head">
             <h3>Blockchain / Web3 POCs — Wipro Blockchain Practice</h3>
             <span class="dates">Jan 2020 – Sep 2021</span>
@@ -681,34 +798,6 @@
           <div class="tech-tags"><span>Corda</span><span>Ethereum</span><span>Spring Boot</span></div>
         </div>
 
-        <div class="block">
-          <span class="block-id">Blk 02</span>
-          <div class="block-head">
-            <h3>MYRIAD DQM Platform — Credit Suisse</h3>
-            <span class="dates">Jul 2015 – Dec 2019</span>
-          </div>
-          <p class="block-role">Technical Lead</p>
-          <ul>
-            <li>Translated regulatory requirements into architecture, overseeing development through production release.</li>
-            <li>Resolved issues across SIT/UAT/OAT and mentored the team on code reviews and integration testing.</li>
-          </ul>
-          <div class="tech-tags"><span>Java</span><span>Oracle CEP</span><span>PL/SQL</span></div>
-        </div>
-
-        <div class="block">
-          <span class="block-id">Blk 01</span>
-          <div class="block-head">
-            <h3>ESR Automation — NeuStar</h3>
-            <span class="dates">Jul 2013 – Jul 2015</span>
-          </div>
-          <p class="block-role">Technical Lead</p>
-          <ul>
-            <li>Built a number-porting platform supporting wireless-to-wireless porting.</li>
-            <li>Defined BPEL orchestration workflows for core porting processes and owned release management.</li>
-          </ul>
-          <div class="tech-tags"><span>Oracle SOA Suite</span><span>WebLogic</span><span>BPEL</span></div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -717,9 +806,13 @@
     <div class="wrap">
       <div class="section-head">
         <h2>What settled on the ledger</h2>
-        <p>A handful of outcomes clients could take to the board.</p>
+        <p>Outcomes across two decades of delivery — enterprise and Web3 alike.</p>
       </div>
       <div class="stat-grid">
+        <div class="stat">
+          <div class="num">21</div>
+          <div class="label">Years leading delivery and architecture across BFSI, supply chain &amp; telecom</div>
+        </div>
         <div class="stat">
           <div class="num">4</div>
           <div class="label">Central banks connected in a live cross-border CBDC transfer solution</div>
@@ -744,19 +837,25 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Stack</h2>
-        <p>What runs underneath the architecture decisions.</p>
+        <p>What runs underneath the architecture decisions — enterprise integration and blockchain both.</p>
       </div>
       <div class="skills-grid">
-        <div class="skill-group">
-          <h3>Blockchain platforms</h3>
-          <div class="chip-row">
-            <span>Hedera</span><span>Quorum</span><span>Corda</span><span>Ethereum</span><span>Hyperledger Indy</span><span>Web3.js</span><span>Truffle</span><span>DAML</span><span>IPFS</span><span>Digital identity</span>
-          </div>
-        </div>
         <div class="skill-group">
           <h3>Languages &amp; frameworks</h3>
           <div class="chip-row">
             <span>Java</span><span>Node.js</span><span>Spring Boot</span><span>Solidity</span><span>REST APIs</span><span>Python</span><span>Shell / PowerShell</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Database</h3>
+          <div class="chip-row">
+            <span>Oracle 9i–12c</span><span>MongoDB</span><span>MS SQL</span><span>MySQL</span><span>PostgreSQL</span><span>Cosmos DB</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Integration &amp; middleware</h3>
+          <div class="chip-row">
+            <span>Oracle SOA Suite</span><span>BPEL</span><span>BAM</span><span>CEP</span><span>J2EE</span><span>XML/XSLT</span><span>UML</span>
           </div>
         </div>
         <div class="skill-group">
@@ -772,15 +871,9 @@
           </div>
         </div>
         <div class="skill-group">
-          <h3>Database</h3>
+          <h3>Blockchain platforms</h3>
           <div class="chip-row">
-            <span>Oracle 9i–12c</span><span>MongoDB</span><span>MS SQL</span><span>MySQL</span><span>PostgreSQL</span><span>Cosmos DB</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>Integration &amp; other tools</h3>
-          <div class="chip-row">
-            <span>Oracle SOA Suite</span><span>BPEL</span><span>BAM</span><span>CEP</span><span>J2EE</span><span>XML/XSLT</span><span>UML</span>
+            <span>Hedera</span><span>Quorum</span><span>Corda</span><span>Ethereum</span><span>Hyperledger Indy</span><span>Web3.js</span><span>Truffle</span><span>DAML</span><span>IPFS</span><span>Digital identity</span>
           </div>
         </div>
       </div>
@@ -847,13 +940,11 @@
 </footer>
 
 <script>
-  // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-  // Hero node-network animation — a single signature moment
   const canvas = document.getElementById('nodeCanvas');
   const ctx = canvas.getContext('2d');
   let w, h, nodes;
